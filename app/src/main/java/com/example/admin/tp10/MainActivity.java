@@ -203,28 +203,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     public void additionner(){
-        entrer();
-        int nombreAddition, num1,num2;
-        num1 = stack.peek();
-        stack.pop();
-        num2 = stack.peek();
-        stack.pop();
-        nombreAddition = num1+num2;
-        stack.push(nombreAddition);
-        pileClear();
-        refreshPile(stack);
+
+            entrer();
+        if(stack.size()>=2) {
+            int nombreAddition, num1, num2;
+            num1 = stack.peek();
+            stack.pop();
+            num2 = stack.peek();
+            stack.pop();
+            nombreAddition = num1 + num2;
+            stack.push(nombreAddition);
+            pileClear();
+            refreshPile(stack);
+        }
     }
     public void soustraire(){
-        entrer();
-        int nombreSoustraire, num1,num2;
-        num1 = stack.peek();
-        stack.pop();
-        num2 = stack.peek();
-        stack.pop();
-        nombreSoustraire = num1-num2;
-        stack.push(nombreSoustraire);
-        pileClear();
-        refreshPile(stack);
+
+            entrer();
+        if(stack.size()>=2) {
+            int nombreSoustraire, num1, num2;
+            num1 = stack.peek();
+            stack.pop();
+            num2 = stack.peek();
+            stack.pop();
+            nombreSoustraire = num1 - num2;
+            stack.push(nombreSoustraire);
+            pileClear();
+            refreshPile(stack);
+        }
+    }
+    public void diviser(){
+
     }
 
 
