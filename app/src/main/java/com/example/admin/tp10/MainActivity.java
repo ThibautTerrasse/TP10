@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Stack;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    //déclaration des variables
     Stack<Integer> stack;
 
     Button bouton1;
@@ -85,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         boutonSwap.setOnClickListener(this);
         boutonPlus.setOnClickListener(this);
         boutonMoins.setOnClickListener(this);
-        boutonDiviser.setOnClickListener(this);
+        //outonDiviser.setOnClickListener(this);  Fonctionnalité à revoir
     }
         @Override
         public void onClick(View view) {
@@ -141,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     soustraire();
                     break;
                 case R.id.toucheDiviser:
-
+                        diviser();
                     break;
 
             }
@@ -233,7 +231,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     public void diviser(){
-
+        entrer();
+        if(stack.size()>=2) {
+            int nombreSoustraire, num1, num2;
+            num1 = stack.peek();
+            stack.pop();
+            num2 = stack.peek();
+            stack.pop();
+            nombreSoustraire = num1/num2;
+            stack.push(nombreSoustraire);
+            pileClear();
+            refreshPile(stack);
+        }
     }
 
 
